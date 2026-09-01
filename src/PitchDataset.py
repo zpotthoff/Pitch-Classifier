@@ -3,8 +3,8 @@ from torch.utils.data import Dataset
 
 class PitchDataset(Dataset):
     def __init__(self, X, y):
-        self.X = torch.tensor(X, dtype=torch.float64)
-        self.y = torch.tensor(y, dtype=torch.long)
+        self.X = torch.tensor(X.to_numpy(), dtype=torch.float64)
+        self.y = torch.tensor(y.to_numpy(), dtype=torch.long)
 
     def __len__(self):
         return len(self.X)
